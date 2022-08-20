@@ -7,8 +7,8 @@ export default function HeaderScreen() {
 			<div className="container">
 				<div className="logo">
 					<Link to="/">
-						<img src="Images/nxg-logo.png" className="inline-svg" alt="logo" height="100.3"
-							width="197.7" /> </Link>
+						<img src="Images/nxg-logo.svg" className="inline-svg" alt="logo"
+							 /> </Link>
 				</div>
 				<span className="nav-opener icon-menu"></span>
 				<nav className="navbar">

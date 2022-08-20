@@ -1,4 +1,4 @@
-export default function messageBox(props)
+export default function MessageBox(props)
 {
     //console.log('props',props.alert);
     const msg =props.msg;

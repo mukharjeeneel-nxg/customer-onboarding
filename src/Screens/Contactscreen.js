@@ -1,9 +1,17 @@
 import HeaderScreen from "./HeaderScreen";
 import FooterScreen from "./FooterScreen";
+import { useSelector } from "react-redux";
+import MessageBox from "./messageBox";
 import { Form, Button, Container, Col, Row, Card } from "react-bootstrap";
+import { ContactAction } from "../actions/ContactAction";
 import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import Alert from '@mui/material/Alert';
 
 export default function Contactscreen() {
+  const dispatch = useDispatch();
+  const contactDetails = useSelector((state) => state.contactSubmit);
+  const { contactInfo, loading } = contactDetails;
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -28,6 +36,47 @@ export default function Contactscreen() {
       }
     }
   }
+  const submitContact = (e) => {
+    const re =
+      /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+    if (name == "" || name.length > 120) {
+      setNameError("Enter a valid name!");
+      return false;
+    } else {
+      setNameError("");
+      if (re.test(email)) {
+        setEmailError("");
+
+        if (phone.length == 10) {
+          setPhoneError("");
+          console.log("contact", name, email, phone, message);
+          if (setVerified) {
+            dispatch(ContactAction(name, email, phone, message));
+          }
+        } else {
+          setPhoneError("Enter valid mobile number!");
+        }
+      } else {
+        setEmailError("Invalid Email Address");
+      }
+    }
+  };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+
+    if (loading) {
+    } else if (contactInfo != null) {
+      if (contactInfo.response_code == 1) {
+        setName("");
+        setEmail("");
+        setPhone("");
+        setMessage("");
+      }
+    }
+  }, [contactInfo]);
+  //console.log("response code", contactInfo);
   return (
     <>
       <HeaderScreen />
@@ -61,16 +110,28 @@ export default function Contactscreen() {
                   </span>
                   contact you!
                 </p>
-                <br />
+               
                 <Card>
                   <Card.Body>
                     <Form>
                       <Row className="mb-3">
-                        <Form.Group as={Col} md="12">
-                          {/* Not in use */}
-                        </Form.Group>
+        
                       </Row>
-                      <Form.Group className="mb-3" controlId="formBasicEmail">
+                      <Form.Group className="mb-2" controlId="formBasicEmail">
+                      {loading ? (
+                      ""
+                    ) : contactInfo == null ? (
+                      ""
+                    ) : contactInfo.response_code == 1 ? (
+                      <center>
+                        {" "}
+                        <Alert severity="success">Successfully submitted!</Alert>
+                      </center>
+                    ) : contactInfo.response_code == 0 ? (
+                      <Alert severity="error">Email already exists!</Alert>
+                    ) : (
+                      ""
+                    )}  
                         <Form.Label style={{ color: "black" }}>
                           Enter your name{" "}
                           <span className="required-span">*</span>
@@ -114,7 +175,7 @@ export default function Contactscreen() {
                           maxLength={10}
                           min="0"
                           value={phone}
-                      onChange={(e) => mobileValidation(e.target.value)}
+                          onChange={(e) => mobileValidation(e.target.value)}
                           placeholder="9179******"
                           name=""
                         />
@@ -135,7 +196,14 @@ export default function Contactscreen() {
                       <br />
                       <center>
                         {" "}
-                        <Button variant="primary">Submit</Button>{" "}
+                        <Button variant="primary"
+                         onClick={(e) => submitContact(e)}
+                         disabled={loading ? "disabled" : ""}
+                        > 
+                        {loading
+                          ? "Please wait submitting your details.."
+                          : "Submit your details"}
+                          </Button>{" "}
                       </center>
                       <br />
                     </Form>
