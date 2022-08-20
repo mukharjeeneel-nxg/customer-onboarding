@@ -1358,8 +1358,8 @@ input[type="submit"] {
 .col-xs-10,
 .col-xs-11,
 .col-xs-12 {
-  padding-left: 14px;
-  padding-right: 14px;
+  padding-left: 25px;
+  padding-right: 25px;
   position: relative;
   min-height: 1px;
   width: 100%;

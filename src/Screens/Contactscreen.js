@@ -110,14 +110,14 @@ export default function Contactscreen() {
                   </span>
                   contact you!
                 </p>
-               
+                <br/>
                 <Card>
                   <Card.Body>
                     <Form>
                       <Row className="mb-3">
         
                       </Row>
-                      <Form.Group className="mb-2" controlId="formBasicEmail">
+                      <Form.Group className="mb-3" controlId="formBasicEmail">
                       {loading ? (
                       ""
                     ) : contactInfo == null ? (
@@ -132,10 +132,11 @@ export default function Contactscreen() {
                     ) : (
                       ""
                     )}  
-                        <Form.Label style={{ color: "black" }}>
+                        <Form.Label style={{ color: "black", marginBottom:'0.5 rem' }}>
                           Enter your name{" "}
                           <span className="required-span">*</span>
                         </Form.Label>
+                        <br/>
                         <Form.Control
                           className="form-control"
                           type="text"
@@ -145,12 +146,14 @@ export default function Contactscreen() {
                           required
                         />
                         <span style={{ color: "red" }}>{nameError}</span>
+                        <br/><br/>
                       </Form.Group>
                       <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label style={{ color: "black" }}>
                           Enter email address{" "}
                           <span className="required-span">*</span>
                         </Form.Label>
+                        
                         <Form.Control
                           className="form-control"
                           type="text"
@@ -160,7 +163,9 @@ export default function Contactscreen() {
                           required
                         />
                         <span style={{ color: "red" }}>{emailError}</span>
+                        <br/><br/>
                       </Form.Group>
+                      
                       <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label style={{ color: "black" }}>
                           Enter Mobile no.
@@ -180,6 +185,7 @@ export default function Contactscreen() {
                           name=""
                         />
                         <span style={{ color: "red" }}>{phoneError}</span>
+                        <br/><br/>
                       </Form.Group>
                       <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label style={{ color: "black" }}>
