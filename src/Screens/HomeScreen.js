@@ -14,7 +14,7 @@ export default function HomeScreen() {
             <div className="hero-content-row row">
               <div className="col-md-6" data-appear-sequential>
                 <div className="inner">
-                  <h1>The future of commerce</h1>
+                  <h2>The future of commerce</h2>
 
                   <div className="sub-heading">
                     <p>

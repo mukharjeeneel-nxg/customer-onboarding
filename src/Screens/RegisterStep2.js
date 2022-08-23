@@ -7,6 +7,7 @@ import { Navigate } from "react-router";
 import { useSelector } from "react-redux";
 import { billingAction } from "../actions/RegisterAction";
 import { useDispatch } from "react-redux";
+import FooterScreen from "./FooterScreen";
 
 export default function RegisterStep2() {
   const dispatch = useDispatch();
@@ -120,6 +121,8 @@ export default function RegisterStep2() {
       {loadingBill ? "" : errorBill ? "" : billingInfo ? <Navigate to="/register-step-3" /> : ""
       }
       <HeaderScreen />
+      <section className="page-hero home is-white">
+      <Container >
       <Row >
         <br></br>
 
@@ -248,7 +251,9 @@ export default function RegisterStep2() {
         </Col>
         <Col sm="2"></Col>
       </Row>
-
+      </Container>
+        </section>
+        <FooterScreen />
     </>
   );
 }

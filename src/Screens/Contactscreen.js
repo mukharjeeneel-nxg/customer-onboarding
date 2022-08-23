@@ -7,7 +7,7 @@ import { ContactAction } from "../actions/ContactAction";
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import Alert from '@mui/material/Alert';
-
+import { Link } from "react-router-dom";
 export default function Contactscreen() {
   const dispatch = useDispatch();
   const contactDetails = useSelector((state) => state.contactSubmit);
@@ -243,6 +243,7 @@ export default function Contactscreen() {
           </div>
         </div>
       </section>
+     <Link to="/register-step-2"> <button>Register step 2</button></Link>
       <FooterScreen />
     </>
   );

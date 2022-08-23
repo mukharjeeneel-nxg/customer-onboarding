@@ -2,7 +2,7 @@ import HeaderScreen from "./HeaderScreen";
 import { Form, Button, Container, Col, Row, InputGroup, Card } from "react-bootstrap";
 import { useState, useEffect } from "react"
 import { Navigate } from "react-router";
-
+import FooterScreen from "./FooterScreen";
 
 
 export default function RegisterStep3(sellerInfo) {
@@ -20,6 +20,8 @@ export default function RegisterStep3(sellerInfo) {
         <>
             {/* {sellerData==null? <Navigate to="/" /> : ""} */}
             <HeaderScreen />
+            <section className="page-hero home is-white">
+                <Container >
             <Row >
                 <br></br>
 
@@ -43,6 +45,9 @@ export default function RegisterStep3(sellerInfo) {
                 </Col>
                 <Col sm="2"></Col>
             </Row>
+            </Container>
+            </section>
+            <FooterScreen/>
         </>
     )
 }
