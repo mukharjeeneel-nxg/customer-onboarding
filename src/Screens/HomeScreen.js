@@ -37,7 +37,7 @@ export default function HomeScreen() {
                 <div className="hero-img" data-appear-fade-in>
                   <div className="holder" style={{ maxWidth: "700px" }}>
                     <img
-                      src="http://localhost:3001/element/element-main.svg"
+                      src="Images/Home/element-main.svg"
                       className="attachment-xl"
                       alt="Homepage_2x"
                       data-lazy-src="wp-content/uploads/2022/02/Homepage_2x.png"
@@ -178,7 +178,7 @@ export default function HomeScreen() {
             <div className="img-hold">
               <div className="img">
                 <img
-                  src="http://localhost:3001/element/element-main.svg"
+                  src="Images/Home/CommerceHeadless.jpg"
                   className="attachment-large"
                   alt="CommerceHeadless_2x"
                   data-lazy-src="wp-content/uploads/2022/02/CommerceHeadless_2x-1024x886.jpg"
@@ -225,7 +225,7 @@ export default function HomeScreen() {
             <div className="img-hold">
               <div className="img">
                 <img
-                  src="http://localhost:3001/element/element-main.svg"
+                  src="Images/Home/Partners_2x.png"
                   className="attachment-large"
                   alt="Best Partners Stripe MailChimp PayPal and More"
                   data-lazy-src="wp-content/uploads/2022/02/Partners_2x-1024x812.png"
@@ -329,7 +329,7 @@ export default function HomeScreen() {
             <div className="img-hold">
               <div className="img">
                 <img
-                  src="http://localhost:3001/element/element-main.svg"
+                  src="Images/Home/image-1-1-986x1024.png"
                   className="attachment-large"
                   alt="image-1 (1)"
                   data-lazy-src="wp-content/uploads/2022/02/image-1-1-986x1024.png"
@@ -378,7 +378,7 @@ export default function HomeScreen() {
             <div className="img-hold">
               <div className="img">
                 <img
-                  src="http://localhost:3001/element/element-main.svg"
+                  src="Images/Home/image3.png"
                   className="attachment-large"
                   alt="image-3 (1)"
                   data-lazy-src="wp-content/uploads/2022/02/image-3-1.png"
@@ -426,7 +426,7 @@ export default function HomeScreen() {
             <div className="img-hold">
               <div className="img">
                 <img
-                  src="http://localhost:3001/element/element-main.svg"
+                  src="Images/Home/image4.png"
                   className="attachment-large"
                   alt="image-2 (1)"
                   data-lazy-src="wp-content/uploads/2022/02/image-2-1-1024x818.png"
@@ -478,7 +478,7 @@ export default function HomeScreen() {
                     <figure>
                       <div className="slide-image">
                         <img
-                          src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
+                          src="Images/Home/image5.png"
                           className="attachment-large"
                           alt="fabric-commerce-1"
                           data-lazy-src="wp-content/uploads/2022/01/fabric-commerce-1-1024x929.png"
