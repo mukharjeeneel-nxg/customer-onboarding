@@ -5806,7 +5806,7 @@ select::-ms-expand {
 }
 .ready.bg-grad {
   color: #fff;
-  background: linear-gradient(135deg, #1c082c 25%, #df46d3);
+  background: linear-gradient(135deg, #1c082c 25%, #6ace39);
   /* background-image: url(../../images/bg-pattern-gradient.jpg); */
   background-repeat: no-repeat;
   background-position: 0 100%;

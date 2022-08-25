@@ -303,9 +303,9 @@ function Header2() {
                   <li className=" menu-item menu-item-type-post_type menu-item-object-page">
                     <a href="about">About</a>
                   </li>
-                  <li className=" menu-item menu-item-type-post_type menu-item-object-page">
+                  {/* <li className=" menu-item menu-item-type-post_type menu-item-object-page">
                     <a href="press-room/index.html">Newsroom</a>
-                  </li>
+                  </li> */}
                   <li className=" menu-item menu-item-type-post_type menu-item-object-page">
                     <a href="careers/index.html">Careers</a>
                   </li>

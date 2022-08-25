@@ -18,7 +18,7 @@ export default function HeaderScreen() {
           <nav className="navbar">
             <div className="nav-head">
               <div className="logo">
-                <a href="index.html">
+                <Link to="index.html">
                   <img
                     src="wp-content/uploads/2022/01/logo-1.svg"
                     className="inline-svg"
@@ -26,14 +26,14 @@ export default function HeaderScreen() {
                     height="50.3"
                     width="197.7"
                   />{" "}
-                </a>
+                </Link>
               </div>
               <span className="nav-opener icon-cross"></span>
             </div>
 
             <ul id="menu-header-menu" className="nav">
               <li className=" menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
-                <a href="#">Products</a>
+                <Link to="#">Products</Link>
                 <ul className="drop-menu product-menu">
                   <li className=" menu-item menu-item-type-post_type menu-item-object-page">
                     <Link to="commerce">
@@ -65,7 +65,7 @@ export default function HeaderScreen() {
                     </Link>
                   </li>
                   {/* <li className=" menu-item menu-item-type-post_type menu-item-object-page">
-                    <a href="commerce-apps/index.html">
+                    <Link to="commerce-apps/index.html">
                       <div className="ico-wrap">
                         <img
                           src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2072%2057'%3E%3C/svg%3E"
@@ -91,10 +91,10 @@ export default function HeaderScreen() {
                         </strong>
                         <p>Commerce management tools</p>
                       </div>
-                    </a>
+                    </Link>
                   </li> */}
-                  {/* <li className=" menu-item menu-item-type-post_type menu-item-object-page">
-                    <a href="ecommerce-apis/index.html">
+                  <li className=" menu-item menu-item-type-post_type menu-item-object-page">
+                    <Link to="ecommerce-apis/index.html">
                       <div className="ico-wrap">
                         <img
                           src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2072%2057'%3E%3C/svg%3E"
@@ -120,10 +120,10 @@ export default function HeaderScreen() {
                         </strong>
                         <p>Building blocks of commerce</p>
                       </div>
-                    </a>
+                    </Link>
                   </li>
                   <li className=" menu-item menu-item-type-post_type menu-item-object-page">
-                    <a href="b2b-commerce-platform/index.html">
+                    <Link to="b2b-commerce-platform/index.html">
                       <div className="ico-wrap">
                         <img
                           src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2072%2057'%3E%3C/svg%3E"
@@ -149,10 +149,10 @@ export default function HeaderScreen() {
                         </strong>
                         <p>Better B2B buying experiences</p>
                       </div>
-                    </a>
-                  </li> */}
+                    </Link>
+                  </li>
                   <li className=" menu-item menu-item-type-post_type menu-item-object-page">
-                    <a href="pim">
+                    <Link to="pim">
                       <div className="ico-wrap">
                         <img
                           src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2072%2057'%3E%3C/svg%3E"
@@ -178,10 +178,10 @@ export default function HeaderScreen() {
                         </strong>
                         <p>Drive product-led growth</p>
                       </div>
-                    </a>
+                    </Link>
                   </li>
                   <li className=" menu-item menu-item-type-post_type menu-item-object-page">
-                    <a href="offers">
+                    <Link to="offers">
                       <div className="ico-wrap">
                         <img
                           src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2072%2057'%3E%3C/svg%3E"
@@ -208,10 +208,10 @@ export default function HeaderScreen() {
                         </strong>
                         <p>Simplify pricing and promotions</p>
                       </div>
-                    </a>
+                    </Link>
                   </li>
                   <li className=" menu-item menu-item-type-post_type menu-item-object-page">
-                    <a href="ordermanagement">
+                    <Link to="ordermanagement">
                       <div className="ico-wrap">
                         <img
                           src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2072%2057'%3E%3C/svg%3E"
@@ -237,10 +237,10 @@ export default function HeaderScreen() {
                         </strong>
                         <p>Streamline order fulfillment</p>
                       </div>
-                    </a>
+                    </Link>
                   </li>
                   <li className=" menu-item menu-item-type-post_type menu-item-object-page">
-                    <a href="marketplace">
+                    <Link to="marketplace">
                       <div className="ico-wrap">
                         <img
                           src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2072%2057'%3E%3C/svg%3E"
@@ -266,46 +266,46 @@ export default function HeaderScreen() {
                         </strong>
                         <p>Ignite new revenue streams</p>
                       </div>
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </li>
               <li className=" menu-item menu-item-type-post_type menu-item-object-page">
-                <a href="technology-and-solution-partners/index.html">
+                <Link to="technology-and-solution-partners/index.html">
                   Partners
-                </a>
+                </Link>
               </li>
               <li className=" menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
-                <a href="#">Resources</a>
+                <Link to="#">Resources</Link>
                 <ul className="drop-menu">
                   <li className=" menu-item menu-item-type-custom menu-item-object-custom">
-                    <a href="blog/index.html">Blog</a>
+                    <Link to="blog/index.html">Blog</Link>
                   </li>
                   <li className=" menu-item menu-item-type-custom menu-item-object-custom">
-                    <a href="https://knowledgebase.fabric.inc/knowledgebase">
+                    <Link to="https://knowledgebase.fabric.inc/knowledgebase">
                       Knowledge Base
-                    </a>
+                    </Link>
                   </li>
                   <li className=" menu-item menu-item-type-custom menu-item-object-custom">
-                    <a href="https://knowledgebase.fabric.inc/docs">API Docs</a>
+                    <Link to="https://knowledgebase.fabric.inc/docs">API Docs</Link>
                   </li>
                   <li className=" menu-item menu-item-type-custom menu-item-object-custom">
-                    <a href="https://support.fabric.inc/hc/en-us">Support</a>
+                    <Link to="https://support.fabric.inc/hc/en-us">Support</Link>
                   </li>
                 </ul>
               </li>
               <li className=" menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
-                <a href="#">Company</a>
+                <Link to="#">Company</Link>
 
                 <ul className="drop-menu">
                   <li className=" menu-item menu-item-type-post_type menu-item-object-page">
-                    <a href="about">About</a>
+                    <Link to="about">About</Link>
                   </li>
+                  {/* <li className=" menu-item menu-item-type-post_type menu-item-object-page">
+                    <Link to="press-room/index.html">Newsroom</Link>
+                  </li> */}
                   <li className=" menu-item menu-item-type-post_type menu-item-object-page">
-                    <a href="press-room/index.html">Newsroom</a>
-                  </li>
-                  <li className=" menu-item menu-item-type-post_type menu-item-object-page">
-                    <a href="careers/index.html">Careers</a>
+                    <Link to="careers/index.html">Careers</Link>
                   </li>
                 </ul>
               </li>

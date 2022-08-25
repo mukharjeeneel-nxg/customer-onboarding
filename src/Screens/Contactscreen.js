@@ -243,7 +243,6 @@ export default function Contactscreen() {
           </div>
         </div>
       </section>
-     <Link to="/register-step-2"> <button>Register step 2</button></Link>
       <FooterScreen />
     </>
   );
