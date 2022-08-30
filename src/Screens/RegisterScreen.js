@@ -16,7 +16,7 @@ import { useSelector } from "react-redux";
 import FooterScreen from "./FooterScreen";
 import MessageBox from "./messageBox";
 import Alert from '@mui/material/Alert';
-
+import { Link } from "react-router-dom";
 
 export default function RegisterScreen() {
   const dispatch = useDispatch();
@@ -246,6 +246,7 @@ export default function RegisterScreen() {
           </div>
         </div>
       </section>
+      <Link to="/register1"><button>Register1</button></Link>
       <FooterScreen />
     </>
   );

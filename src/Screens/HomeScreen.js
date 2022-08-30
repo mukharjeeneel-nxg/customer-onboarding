@@ -501,7 +501,7 @@ export default function HomeScreen() {
                     <figure>
                       <div className="slide-image">
                         <img
-                          src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
+                          src="Images/Home/fabric-commerce-2-1024x768.png"
                           className="attachment-large"
                           alt="fabric-commerce-2"
                           data-lazy-src="wp-content/uploads/2022/01/fabric-commerce-2-1024x768.png"
@@ -524,7 +524,7 @@ export default function HomeScreen() {
                     <figure>
                       <div className="slide-image">
                         <img
-                          src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
+                          src="Images/Home/fabric-commerce-3-1-1024x640.png"
                           className="attachment-large"
                           alt="fabric-commerce-3"
                           data-lazy-src="wp-content/uploads/2022/01/fabric-commerce-3-1-1024x640.png"

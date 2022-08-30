@@ -115,7 +115,8 @@ export default function RegisterStep2() {
 
   return (
 
-    <>{sellerInfo.length == 0 ? <Navigate to="/" /> :
+    <>
+    {sellerInfo.length == 0 ? <Navigate to="/" /> :
       valid ? <Navigate to="/dashboard" /> : ""
     }
       {loadingBill ? "" : errorBill ? "" : billingInfo ? <Navigate to="/register-step-3" /> : ""

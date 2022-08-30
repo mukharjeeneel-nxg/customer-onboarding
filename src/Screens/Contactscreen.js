@@ -181,7 +181,7 @@ export default function Contactscreen() {
                           min="0"
                           value={phone}
                           onChange={(e) => mobileValidation(e.target.value)}
-                          placeholder="9179******"
+                          placeholder="9179892147"
                           name=""
                         />
                         <span style={{ color: "red" }}>{phoneError}</span>
@@ -243,6 +243,9 @@ export default function Contactscreen() {
           </div>
         </div>
       </section>
+     <Link to="/contact2" ><button>Contact screen 2</button></Link>
+     <Link to="/contact3" ><button>Contact screen 3</button></Link>
+
       <FooterScreen />
     </>
   );

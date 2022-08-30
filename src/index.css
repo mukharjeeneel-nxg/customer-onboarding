@@ -17,3 +17,23 @@ code {
 .form-control{
   color:black;
 }
+.inputbase{
+  border: #282c34;
+  border-radius: 2px;
+}
+.contactlabel{
+  color: #282c34;
+  padding-left: 20px;
+}
+.contactinput{
+
+  color:#282c34;
+          margin: 10px;
+}
+.ecommbutton{
+  color: white;
+  background-color:#6ace39;
+  border: none;
+  width: 150px;
+  height: 50px;
+}

@@ -36,7 +36,7 @@ export default function HeaderScreen() {
                 <Link to="#">Products</Link>
                 <ul className="drop-menu product-menu">
                   <li className=" menu-item menu-item-type-post_type menu-item-object-page">
-                    <Link to="commerce">
+                    <Link to="/commerce">
                       <div className="ico-wrap">
                         <img
                           src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2072%2057'%3E%3C/svg%3E"
@@ -271,8 +271,8 @@ export default function HeaderScreen() {
                 </ul>
               </li>
               <li className=" menu-item menu-item-type-post_type menu-item-object-page">
-                <Link to="technology-and-solution-partners/index.html">
-                  Partners
+                <Link to="pricing">
+                  Pricing
                 </Link>
               </li>
               <li className=" menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">

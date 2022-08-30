@@ -543,21 +543,21 @@ const Offers = () => {
         </div>
       </div>
       {/* <!-- CTA Bar --> */}
-      <section class="ready bg-grad">
-        <div class="container" data-appear-sequential>
+      <section className="ready bg-grad">
+        <div className="container" data-appear-sequential>
           <h3>Learn more about our pricing and promotions engine.</h3>
 
-          <ul class="hero-btns-list">
+          <ul className="hero-btns-list">
             <li>
               <a
                 href="https://knowledgebase.fabric.inc/knowledgebase/offers"
-                class="btn btn-black btn-sm"
+                className="btn btn-black btn-sm"
               >
                 Product Docs
               </a>
             </li>
             <li>
-              <a href="../docs/index.html" class="btn btn-white btn-sm">
+              <a href="../docs/index.html" className="btn btn-white btn-sm">
                 API Docs
               </a>
             </li>
