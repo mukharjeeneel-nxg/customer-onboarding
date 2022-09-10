@@ -1,3 +1,4 @@
+import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomeScreen from "./Screens/HomeScreen";
 import Contactscreen from "./Screens/Contactscreen";
@@ -12,9 +13,11 @@ import OrderManagement from "./Screens/OrderManagement";
 import Marketplace from "./Screens/Marketplace";
 import AboutScreen from './Screens/AboutScreen'
 import PricingScreen from "./Screens/PricingScreen";
-import Contact2 from "./Screens/Contact2";
 import Contact3 from "./Screens/Contact3";
 import Register1 from "./Screens/Register1"
+import Register2 from "./Screens/Register2";
+import Register3 from "./Screens/Register3";
+
 
 function App() {
   const sellerDetails = useSelector((state) => state.sellerRegister);
@@ -36,9 +39,10 @@ function App() {
           <Route path="/marketplace" element={<Marketplace/>} />
           <Route path="/about" element={<AboutScreen/>} />
           <Route path="/pricing" element={<PricingScreen/>} />
-          <Route path="/contact2" element={<Contact2/>} />
           <Route path="/contact3" element={<Contact3/>} />
           <Route path="/register1" element={<Register1/>} />
+          <Route path="/register2" element={<Register2/>} />
+          <Route path="/register3" element={<Register3/>} />
         </Routes> 
         {/* <HeaderScreen/>
      <FooterScreen/> */}

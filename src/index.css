@@ -1,39 +1,39 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 .required-span {
   color: red;
 }
-.form-control{
-  color:black;
+.form-control {
+  color: black;
 }
-.inputbase{
+.inputbase {
   border: #282c34;
   border-radius: 2px;
 }
-.contactlabel{
+.contactlabel {
   color: #282c34;
   padding-left: 20px;
 }
-.contactinput{
-
-  color:#282c34;
-          margin: 10px;
+.contactinput {
+  color: #282c34;
+  margin: 10px;
 }
-.ecommbutton{
+.ecommbutton {
   color: white;
-  background-color:#6ace39;
+  background-color: #6ace39;
   border: none;
   width: 150px;
   height: 50px;
 }
+

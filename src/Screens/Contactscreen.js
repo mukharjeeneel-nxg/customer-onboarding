@@ -6,8 +6,9 @@ import { Form, Button, Container, Col, Row, Card } from "react-bootstrap";
 import { ContactAction } from "../actions/ContactAction";
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import Alert from '@mui/material/Alert';
+import Alert from "@mui/material/Alert";
 import { Link } from "react-router-dom";
+
 export default function Contactscreen() {
   const dispatch = useDispatch();
   const contactDetails = useSelector((state) => state.contactSubmit);
@@ -91,7 +92,10 @@ export default function Contactscreen() {
 
             <Row>
               <Col lg="6">
-                <h3>We're here to support you. If you're looking for help you've come to the right place.</h3>
+                <h3>
+                  We're here to support you. If you're looking for help you've
+                  come to the right place.
+                </h3>
                 <p>Please show us your interest by filling the form.</p>
               </Col>
 
@@ -110,33 +114,35 @@ export default function Contactscreen() {
                   </span>
                   contact you!
                 </p>
-                <br/>
+                <br />
                 <Card>
                   <Card.Body>
                     <Form>
-                      <Row className="mb-3">
-        
-                      </Row>
+                      <Row className="mb-3"></Row>
                       <Form.Group className="mb-3" controlId="formBasicEmail">
-                      {loading ? (
-                      ""
-                    ) : contactInfo == null ? (
-                      ""
-                    ) : contactInfo.response_code == 1 ? (
-                      <center>
-                        {" "}
-                        <Alert severity="success">Successfully submitted!</Alert>
-                      </center>
-                    ) : contactInfo.response_code == 0 ? (
-                      <Alert severity="error">Email already exists!</Alert>
-                    ) : (
-                      ""
-                    )}  
-                        <Form.Label style={{ color: "black", marginBottom:'0.5 rem' }}>
+                        {loading ? (
+                          ""
+                        ) : contactInfo == null ? (
+                          ""
+                        ) : contactInfo.response_code == 1 ? (
+                          <center>
+                            {" "}
+                            <Alert severity="success">
+                              Successfully submitted!
+                            </Alert>
+                          </center>
+                        ) : contactInfo.response_code == 0 ? (
+                          <Alert severity="error">Email already exists!</Alert>
+                        ) : (
+                          ""
+                        )}
+                        <Form.Label
+                          style={{ color: "black", marginBottom: "0.5 rem" }}
+                        >
                           Enter your name{" "}
                           <span className="required-span">*</span>
                         </Form.Label>
-                        <br/>
+                        <br />
                         <Form.Control
                           className="form-control"
                           type="text"
@@ -146,14 +152,15 @@ export default function Contactscreen() {
                           required
                         />
                         <span style={{ color: "red" }}>{nameError}</span>
-                        <br/><br/>
+                        <br />
+                        <br />
                       </Form.Group>
                       <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label style={{ color: "black" }}>
                           Enter email address{" "}
                           <span className="required-span">*</span>
                         </Form.Label>
-                        
+
                         <Form.Control
                           className="form-control"
                           type="text"
@@ -163,9 +170,10 @@ export default function Contactscreen() {
                           required
                         />
                         <span style={{ color: "red" }}>{emailError}</span>
-                        <br/><br/>
+                        <br />
+                        <br />
                       </Form.Group>
-                      
+
                       <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label style={{ color: "black" }}>
                           Enter Mobile no.
@@ -185,7 +193,8 @@ export default function Contactscreen() {
                           name=""
                         />
                         <span style={{ color: "red" }}>{phoneError}</span>
-                        <br/><br/>
+                        <br />
+                        <br />
                       </Form.Group>
                       <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label style={{ color: "black" }}>
@@ -202,14 +211,15 @@ export default function Contactscreen() {
                       <br />
                       <center>
                         {" "}
-                        <Button variant="primary"
-                         onClick={(e) => submitContact(e)}
-                         disabled={loading ? "disabled" : ""}
-                        > 
-                        {loading
-                          ? "Please wait submitting your details.."
-                          : "Submit your details"}
-                          </Button>{" "}
+                        <Button
+                          variant="primary"
+                          onClick={(e) => submitContact(e)}
+                          disabled={loading ? "disabled" : ""}
+                        >
+                          {loading
+                            ? "Please wait submitting your details.."
+                            : "Submit your details"}
+                        </Button>{" "}
                       </center>
                       <br />
                     </Form>
@@ -243,8 +253,9 @@ export default function Contactscreen() {
           </div>
         </div>
       </section>
-     <Link to="/contact2" ><button>Contact screen 2</button></Link>
-     <Link to="/contact3" ><button>Contact screen 3</button></Link>
+      <Link to="/contact3">
+        <button>Contact screen 3</button>
+      </Link>
 
       <FooterScreen />
     </>

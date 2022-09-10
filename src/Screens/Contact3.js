@@ -162,7 +162,8 @@ export default function Contact3() {
                     />
                   </FormControl>
                   <span style={{ color: "red" }}>{nameError}</span>
-                </FormGroup>
+                
+                </FormGroup>  <br/>
                 <FormGroup className="mb-3" controlId="formBasicEmail">
                   <FormLabel style={{ color: "black" }}>
                     Enter email address <span className="required-span">*</span>
@@ -180,7 +181,7 @@ export default function Contact3() {
                   <FormControl />
                   <span style={{ color: "red" }}>{emailError}</span>
                 </FormGroup>
-
+                <br/>
                 <FormGroup className="mb-3" controlId="formBasicEmail">
                   <FormLabel style={{ color: "black" }}>
                     Enter Mobile no.
@@ -203,6 +204,7 @@ export default function Contact3() {
                   </FormControl>
                   <span style={{ color: "red" }}>{phoneError}</span>
                 </FormGroup>
+                <br/>
                 <FormGroup className="mb-3" controlId="formBasicEmail">
                   <FormLabel style={{ color: "black" }}>Message:-</FormLabel>
                   <FormControl>

@@ -76,7 +76,7 @@ export default function RegisterScreen() {
   }, []);
   return (
     <>
-      {loading ? (
+      {/* {loading ? (
         ""
       ) : error ? (
         ""
@@ -84,7 +84,7 @@ export default function RegisterScreen() {
         <Navigate to="/register-step-2" replace={true} />
       ) : (
         ""
-      )}
+      )} */}
       <HeaderScreen />
       <section className="page-hero home is-white">
         <div className="bg"></div>
@@ -126,6 +126,7 @@ export default function RegisterScreen() {
                             Select your business category
                             <span className="required-span">*</span>
                           </Form.Label>
+                          
                           <Form.Select
                             aria-label="Default select example"
                             onChange={(e) => setCategory(e.target.value)}
@@ -247,6 +248,8 @@ export default function RegisterScreen() {
         </div>
       </section>
       <Link to="/register1"><button>Register1</button></Link>
+      <Link to="/register2"><button>Register2</button></Link>
+      <Link to="/register3"><button>Register3</button></Link>
       <FooterScreen />
     </>
   );
