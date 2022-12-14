@@ -1,5 +1,4 @@
 import HeaderScreen from "./HeaderScreen";
-import FooterScreen from "./FooterScreen";
 import {
   Form,
   Button,
@@ -10,11 +9,22 @@ import {
   Card,
 } from "react-bootstrap";
 import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { Navigate } from "react-router-dom";
+import { RegisterAction } from "../actions/RegisterAction";
+import { useSelector } from "react-redux";
+import FooterScreen from "./FooterScreen";
+import MessageBox from "./messageBox";
+import Alert from '@mui/material/Alert';
+import { Link } from "react-router-dom";
 
-export default function Contactscreen() {
+export default function RegisterScreen() {
+  const dispatch = useDispatch();
+  const sellerDetails = useSelector((state) => state.sellerRegister);
+  const { sellerInfo, loading, error } = sellerDetails;
   const [email, setName] = useState("");
   const [password, setPassword] = useState("");
-  const [storUrl, setUrl] = useState("");
+  const [storUrl, setUrl] = useState(""); 
   const [passError, setPassError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [urlError, setUrlError] = useState("");
@@ -22,8 +32,59 @@ export default function Contactscreen() {
   const [category, setCategory] = useState();
   const [categoryError, setCategoryError] = useState();
 
+  const validateUrl = (e) => {
+    var re = /[^a-zA-Z0-9\-]/;
+    if (e.match(/^[a-z0-9][a-z0-9\-]*[a-z0-9]$/)) {
+      setUrlError("");
+      setValidate(true);
+      setUrl(e);
+      //dispatch(checkurl(storUrl))
+    } else {
+      setUrl(e);
+      setValidate(false);
+      setUrlError("please enter a valid Url!");
+    }
+  };
+
+  const handelSubmit = (e) => {
+    const re =
+      /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    if (category == "" || category == undefined) {
+      setCategoryError("Category is required");
+      return false;
+    } else {
+      setCategoryError("");
+      if (re.test(email)) {
+        setEmailError("");
+
+        if (password.length > 8) {
+          setPassError("");
+          if (urlValidate == true) {
+            console.log("data", email, password, storUrl);
+            dispatch(RegisterAction(email, password, storUrl, category));
+          }
+        } else {
+          setPassError("Password must be contain minimum 8 characters");
+        }
+      } else {
+        setEmailError("Invalid Email Address");
+      }
+    }
+  };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
+      {/* {loading ? (
+        ""
+      ) : error ? (
+        ""
+      ) : sellerInfo.id > 0 ? (
+        <Navigate to="/register-step-2" replace={true} />
+      ) : (
+        ""
+      )} */}
       <HeaderScreen />
       <section className="page-hero home is-white">
         <div className="bg"></div>
@@ -31,24 +92,41 @@ export default function Contactscreen() {
           <canvas id="scene-hero-wave"></canvas>
           <Container>
             <Row>
-              <Col lg="3"></Col>
-              <Col sm="12" lg="6">
+              <Col lg="6"></Col>
+              <Col
+                sm="12"
+                lg="6"
+                style={{ backgroundColor: "white", borderRadius: "20px" }}
+              >
                 <br />
-                <h3>Registration</h3>
-                <p>
-                  Start 30 days <span>free trial</span> no credit card required,
-                  you can choose plan later.
+                <h3 style={{ color: "black" }}>Registration</h3>
+                <p style={{ color: "black" }}>
+                  Start 30 days{" "}
+                  <span style={{ color: "green" }}>
+                    free trial no credit card required
+                  </span>{" "}
+                  , you can choose plan later.
                 </p>
                 <Card>
                   <Card.Body>
-                    <h4>Step 1/2</h4>
+                    <h4 style={{ color: "black" }}>Step 1/2</h4>
                     <Form>
                       <Row className="mb-3">
                         <Form.Group as={Col} md="12">
-                          <Form.Label>
+                          {loading ? (
+                            ""
+                          ) : sellerInfo.response_code == 2 ? (
+                            <Alert severity="error">Requested store URL is already in use!</Alert>
+                          ) : sellerInfo.response_code == 1 ? (
+                            <Alert severity="error">Email address already in use!</Alert>
+                          ) : (
+                            ""
+                          )}
+                          <Form.Label style={{ color: "black" }}>
                             Select your business category
                             <span className="required-span">*</span>
                           </Form.Label>
+                          
                           <Form.Select
                             aria-label="Default select example"
                             onChange={(e) => setCategory(e.target.value)}
@@ -65,7 +143,10 @@ export default function Contactscreen() {
                         </Form.Group>
                       </Row>
                       <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Email address</Form.Label>
+                        <Form.Label style={{ color: "black" }}>
+                          Email address
+                        </Form.Label>
+                        <span className="required-span">*</span>
                         <Form.Control
                           type="email"
                           value={email}
@@ -80,7 +161,10 @@ export default function Contactscreen() {
                         className="mb-3"
                         controlId="formBasicPassword"
                       >
-                        <Form.Label>Password</Form.Label>
+                        <Form.Label style={{ color: "black" }}>
+                          Password
+                        </Form.Label>
+                        <span className="required-span">*</span>
                         <Form.Control
                           type="password"
                           onChange={(e) => setPassword(e.target.value)}
@@ -94,7 +178,10 @@ export default function Contactscreen() {
                         className="mb-3"
                         controlId="formBasicPassword"
                       >
-                        <Form.Label>Store URL</Form.Label>
+                        <Form.Label style={{ color: "black" }}>
+                          Store URL
+                        </Form.Label>
+                        <span className="required-span">*</span>
                         <InputGroup hasValidation>
                           <Form.Control
                             placeholder="myshop"
@@ -103,24 +190,35 @@ export default function Contactscreen() {
                             value={storUrl}
                             minLength={4}
                             maxLength={25}
+                            onChange={(e) => validateUrl(e.target.value)}
                           />
-                          <InputGroup.Text>.nxgecom.in</InputGroup.Text>
+                          <InputGroup.Text style={{ color: "black" }}>
+                            .nxgecom.in
+                          </InputGroup.Text>
+                          <br />
+                          <span style={{ color: "red" }}>{urlError} </span>
                         </InputGroup>
-                        <Form.Text className="text-muted">
+                        <Form.Text
+                          className="text-muted"
+                          style={{ color: "black" }}
+                        >
                           Your customer will visit your store by this URL, you
                           can connect your custom URL like mystore.com later.
                         </Form.Text>
-                        <span style={{ color: "red" }}>{urlError} </span>
-                        <br />
                       </Form.Group>
-
-                      <Button
-                       
-                        variant="primary"
-                        
-                      >
-                        Submit
-                      </Button>
+                      <br />
+                      <center>
+                        <Button
+                          onClick={(e) => handelSubmit(e)}
+                          variant="primary"
+                          disabled={loading ? "disabled" : ""}
+                        >
+                          {loading
+                            ? "Creating your store.."
+                            : "Start Your Online Store"}
+                        </Button>
+                      </center>
+                      <br />
                     </Form>
                   </Card.Body>
                 </Card>
@@ -149,6 +247,9 @@ export default function Contactscreen() {
           </div>
         </div>
       </section>
+      <Link to="/register1"><button>Register1</button></Link>
+      <Link to="/register2"><button>Register2</button></Link>
+      <Link to="/register3"><button>Register3</button></Link>
       <FooterScreen />
     </>
   );

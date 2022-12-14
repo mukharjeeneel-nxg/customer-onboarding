@@ -1358,8 +1358,8 @@ input[type="submit"] {
 .col-xs-10,
 .col-xs-11,
 .col-xs-12 {
-  padding-left: 14px;
-  padding-right: 14px;
+  padding-left: 25px;
+  padding-right: 25px;
   position: relative;
   min-height: 1px;
   width: 100%;
@@ -5806,7 +5806,7 @@ select::-ms-expand {
 }
 .ready.bg-grad {
   color: #fff;
-  background: linear-gradient(135deg, #1c082c 25%, #df46d3);
+  background: linear-gradient(135deg, #1c082c 25%, #6ace39);
   /* background-image: url(../../images/bg-pattern-gradient.jpg); */
   background-repeat: no-repeat;
   background-position: 0 100%;
@@ -9097,7 +9097,7 @@ body.modal-active {
   height: 1024px;
 }
 .page-hero.commerce-platform .page-title {
-  color: #ac28a2;
+  color:  #6ace39;;
 }
 .page-hero.storefront {
   background: linear-gradient(135deg, #fff 10%, #e9ecfe 40%, #d5ccfd);
